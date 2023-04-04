@@ -13,7 +13,7 @@ function Index({ user }) {
         }
         loadData()
     }, [])
-    console.log(repairs)
+    // console.log(repairs)
     return (
             <div>
                 <h1>Index View</h1>

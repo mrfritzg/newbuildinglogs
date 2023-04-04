@@ -31,6 +31,7 @@ function Show({ user }) {
     }
 
     async function handleDeleterepair() {
+        // console.log('handleDeleteRepair ' + repair._id)
         await deleteRepair(repair._id)
         navigate('/repairs')
     }

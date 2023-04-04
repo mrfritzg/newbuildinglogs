@@ -1,4 +1,4 @@
-const Repairs = require('../models/RepairModel')
+const Repairs = require('../models/repairModel')
 const Comments = require('../models/commentModel')
 // const repairs = require('../models/repairs')
 
@@ -25,6 +25,7 @@ module.exports.new = async (req, res) => {
 }
 
 module.exports.delete = async (req, res) => {
+    console.log('Repair Delete controller: '+ req.body)
     try {
         // first find the repairItem, store it in a variable, then delete it from database
     const repairItem = await Repairs.findByIdAndDelete(req.params.id)

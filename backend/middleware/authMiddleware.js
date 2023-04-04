@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken')
 
 const Post = require('../models/postModel')
 const Comment = require('../models/commentModel')
+const Repair = require('../models/repairModel')
 
 async function authorize(req, res, next) {
 
@@ -18,7 +19,9 @@ async function authorize(req, res, next) {
         // 2. Check that the token is valid and not expired
 
         const payload = jwt.verify(token, process.env.JWT_SECRET)
-
+        console.log( payload)
+        console.log('token: ' + token)
+        console.log('Secret: ' + process.env.JWT_SECRET)
         if (payload.error) {
             throw new Error(payload.error)
         }
@@ -41,9 +44,13 @@ async function authorize(req, res, next) {
 async function confirmUserAccess(req, res, next) {
     try {
         let document;
-        if (req.baseUrl.includes('post')) { 
+        if (req.baseUrl.includes('repair')) { 
+            document = await Repair.findOne({ _id: req.params.id, user: req.user })
+             
+        }  else if (req.baseUrl.includes('post')) { 
             document = await Post.findOne({ _id: req.params.id, user: req.user })
-        } else {
+        }
+        else {
             document = await Comment.findOne({ _id: req.params.id, user: req.user })
         }
         if (!document) {

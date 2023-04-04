@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userInfo, userLogin } from '../../services/userService';
@@ -35,7 +33,7 @@ function Login({ setUser }) {
         const user = await userInfo()
         setUser(user)
 
-        navigate('/posts')
+        navigate('/repairs')
     }
 
     return ( 

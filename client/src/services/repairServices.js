@@ -22,6 +22,7 @@ export async function getRepair(id) {
 }
 
 export async function deleteRepair(id) {
+    console.log('deleteRepair' )
     const axios = customAxiosWithAuth()
     try {
         await axios.delete(`/repairs/${id}`)
