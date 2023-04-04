@@ -21,6 +21,7 @@ const postRoutes = require('./routes/postRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const authRoutes = require('./routes/authRoutes')
 const userRoutes = require('./routes/userRoutes')
+const repairRoutes = require('./routes/RepairRoutes')
 
 const { authorize } = require('./middleware/authMiddleware')
 
@@ -32,6 +33,7 @@ app.use('/posts', postRoutes)
 app.use('/comments/p/', commentRoutes)
 app.use('/users', authorize, userRoutes)
 app.use('/auth', authRoutes)
+app.use('/repairs', repairRoutes)
 
 // Listen to the given port
 app.listen(PORT, () => {

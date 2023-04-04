@@ -15,6 +15,9 @@ function Navbar({ user, setUser }) {
           <li className="posts-nav">
             <Link to="/posts">Posts</Link>
           </li>
+          <li>
+            <Link to="/repairs">Repairs</Link>
+          </li>
           <li onClick={logout}>
             <Link to="/login">Logout</Link>
           </li>

@@ -11,7 +11,7 @@ export async function getAllRepairs() {
     }
 }
 
-export async function getRepairItem(id) {
+export async function getRepair(id) {
     const axios = customAxios()
     try {
         const response = await axios.get(`/repairs/${id}`)
@@ -21,7 +21,7 @@ export async function getRepairItem(id) {
     }
 }
 
-export async function deleteRepairItem(id) {
+export async function deleteRepair(id) {
     const axios = customAxiosWithAuth()
     try {
         await axios.delete(`/repairs/${id}`)
@@ -40,7 +40,7 @@ export async function createRepairItem(repair) {
     }
 }
 
-export async function updateRepairItem(id, repair) {
+export async function updateRepair(id, repair) {
     const axios = customAxiosWithAuth()
     try {
         await axios.put(`/repairs/${id}`, repair)

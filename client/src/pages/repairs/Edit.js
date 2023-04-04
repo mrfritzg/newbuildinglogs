@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { getRepairItem, updateRepairItem } from '../../services/repairService'
+import { getRepair, updateRepair } from '../../services/repairServices'
 
 function Edit() {
 
@@ -15,7 +15,7 @@ function Edit() {
     const imgRef = useRef()
 
     useEffect(() => {
-        getRepairItem(params.id).then(data => setRepair(data))
+        getRepair(params.id).then(data => setRepair(data))
     }, [params.id])
 
     async function handleSubmit(e) {
@@ -26,7 +26,7 @@ function Edit() {
             type: typeRef.current.value,
             image: imgRef.current.value,
         }
-        await updateRepairItem(repair._id, updatedrepair)
+        await updateRepair(repair._id, updatedrepair)
         navigate(`/repairs/${repair._id}`)
     }
 

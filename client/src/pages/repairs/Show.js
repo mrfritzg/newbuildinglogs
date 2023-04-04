@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-// import { createCommentForrepair, deleteCommentFromrepair } from "../../services/commentService"
-import { deleterepair, getrepair } from "../../services/repairService"
+import { createCommentForRepair, deleteCommentFromRepair } from "../../services/commentService"
+import { deleteRepair, getRepair } from "../../services/repairServices"
 
 function Show({ user }) {
 
@@ -16,7 +16,7 @@ function Show({ user }) {
 
     useEffect(() => {
         async function loadData() {
-            const data = await getrepair(params.id)
+            const data = await getRepair(params.id)
             if (!data) navigate('/repairs')
             setRepair(data)
         }
@@ -24,14 +24,14 @@ function Show({ user }) {
     }, [params.id])
 
     async function handleDeleteComment(comment) {
-        await deleteCommentFromrepair(comment._id, repair._id)
+        await deleteCommentFromRepair(comment._id, repair._id)
         let updatedrepair = { ...repair }
         updatedrepair.comments = updatedrepair.comments.filter(c => c._id !== comment._id)
         setRepair(updatedrepair)
     }
 
     async function handleDeleterepair() {
-        await deleterepair(repair._id)
+        await deleteRepair(repair._id)
         navigate('/repairs')
     }
 
@@ -43,7 +43,7 @@ function Show({ user }) {
             user
         }
 
-        const newComment = await createCommentForrepair(comment, repair._id)
+        const newComment = await createCommentForRepair(comment, repair._id)
         let updatedrepair = { ...repair }
         updatedrepair.comments.push(newComment)
         setRepair(updatedrepair)

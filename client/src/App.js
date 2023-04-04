@@ -60,6 +60,8 @@ function App() {
               <Route path='/posts/new' element={<NewPost user={loggedIn} />} />
               <Route path='/posts/:id/edit' element={<EditPost />} />
               <Route path='/posts/:id/comments/:cid' element={<EditComment />} />
+              <Route path='/repairs/new' element={<NewRepairs user={loggedIn} />} />
+              <Route path='/posts/:id/edit' element={<EditRepairs />} />
               {!isLoading && <Route path='*' element={<Navigate to='/posts' />} />}
             </>
             :

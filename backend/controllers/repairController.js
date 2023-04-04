@@ -1,5 +1,5 @@
 const Repairs = require('../models/RepairModel')
-const Comments = require('../models/CommentModel')
+const Comments = require('../models/commentModel')
 // const repairs = require('../models/repairs')
 
 module.exports.seed = async (req, res) => {
