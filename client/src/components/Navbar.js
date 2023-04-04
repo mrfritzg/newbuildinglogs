@@ -28,6 +28,9 @@ function Navbar({ user, setUser }) {
             <Link to="/posts">Posts</Link>
           </li>
           <li>
+            <Link to="/repairs">Repairs</Link>
+          </li>
+          <li>
             <Link to="/login">Login</Link>
           </li>
           <li>
