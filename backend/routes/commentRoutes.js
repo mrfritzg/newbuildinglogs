@@ -7,14 +7,31 @@ const commentControl = require('../controllers/commentController')
 const { authorize, confirmUserAccess } = require('../middleware/authMiddleware')
 
 // "/:pid/" is the URL Param for the id of the post that the comment is related to
-router.post('/:pid/', authorize, commentControl.createComment)
+router.post('/p/:pid/', authorize, commentControl.createComment)
+
+//for repairs
+router.post('/r/:pid/', authorize, commentControl.createCommentforRepair)
+
 // "/c/" stands for comment followed by that comment's id
-router.delete('/:pid/c/:id', authorize, confirmUserAccess, commentControl.deleteComment)
+router.delete('/p/:pid/c/:id', authorize, confirmUserAccess, commentControl.deleteComment)
 
-router.get('/:pid/', commentControl.indexComment)
+//for repairs
+// "/c/" stands for comment followed by that comment's id
+router.delete('/r/:pid/c/:id', authorize, confirmUserAccess, commentControl.deleteCommentforRepair)
 
-router.get('/:pid/c/:id', commentControl.showComment)
+router.get('/p/:pid/', commentControl.indexComment)
 
-router.put('/:pid/c/:id', authorize, confirmUserAccess, commentControl.updateComment)
+//for repair
+router.get('/r/:pid/', commentControl.indexCommentforRepair)
+
+router.get('/p/:pid/c/:id', commentControl.showComment)
+
+//for repair
+router.get('/r/:pid/c/:id', commentControl.showComment)
+
+router.put('/p/:pid/c/:id', authorize, confirmUserAccess, commentControl.updateComment)
+
+//for repair
+router.put('/r/:pid/c/:id', authorize, confirmUserAccess, commentControl.updateComment)
 
 module.exports = router

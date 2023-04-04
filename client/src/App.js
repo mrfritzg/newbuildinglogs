@@ -61,7 +61,8 @@ function App() {
               <Route path='/posts/:id/edit' element={<EditPost />} />
               <Route path='/posts/:id/comments/:cid' element={<EditComment />} />
               <Route path='/repairs/new' element={<NewRepairs user={loggedIn} />} />
-              <Route path='/posts/:id/edit' element={<EditRepairs />} />
+              <Route path='/repairs/:id/edit' element={<EditRepairs />} />
+              <Route path='/repairs/:id/comments/:cid' element={<EditComment />} />
               {!isLoading && <Route path='*' element={<Navigate to='/posts' />} />}
             </>
             :

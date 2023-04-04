@@ -32,7 +32,7 @@ function Edit() {
 
     return ( 
         <div>
-            <h1>Edit repair</h1>
+            <h1>Edit Repair Ticket</h1>
             <div className='buttons' style={{ flexDirection: 'column' }}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="nme">Subject:</label><br />
@@ -45,7 +45,8 @@ function Edit() {
                     <textarea ref={descripRef} id="description" cols="30" rows="10" defaultValue={repair.description} /><br /><br />
 
                     <label htmlFor="image">Image: </label><br />
-                     <input type="text" id="img" name="image" ref={imgRef} required defaultValue={repair.image}/><br /><br />
+                     <input type="text" id="img" name="image" ref={imgRef} required defaultValue={repair.image}/><br />
+                        <p><img src={repair.image} alt={repair.image} width="500"/></p>
 
                     <button>Submit</button>
                 </form>

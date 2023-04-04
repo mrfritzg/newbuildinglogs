@@ -19,9 +19,9 @@ async function authorize(req, res, next) {
         // 2. Check that the token is valid and not expired
 
         const payload = jwt.verify(token, process.env.JWT_SECRET)
-        console.log( payload)
-        console.log('token: ' + token)
-        console.log('Secret: ' + process.env.JWT_SECRET)
+        // console.log( payload)
+        // console.log('token: ' + token)
+        // console.log('Secret: ' + process.env.JWT_SECRET)
         if (payload.error) {
             throw new Error(payload.error)
         }

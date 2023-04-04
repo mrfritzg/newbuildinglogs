@@ -43,7 +43,7 @@ export async function updateCommentOfIdFromPost(comment, commentId, postId) {
 export async function deleteCommentFromRepair(commentId, repairId) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.delete(`/comments/p/${repairId}/c/${commentId}`)
+        await axios.delete(`/comments/r/${repairId}/c/${commentId}`)
     } catch(err) {
         console.log(err.message)
     }
@@ -52,7 +52,7 @@ export async function deleteCommentFromRepair(commentId, repairId) {
 export async function createCommentForRepair(comment, repairId) {
     const axios = customAxiosWithAuth()
     try {
-        const response = await axios.post(`/comments/p/${repairId}`, comment)
+        const response = await axios.post(`/comments/r/${repairId}`, comment)
         return response.data
     } catch(err) {
         console.log(err.message)
@@ -62,7 +62,7 @@ export async function createCommentForRepair(comment, repairId) {
 export async function getCommentFromRepair(commentId, repairId) {
     const axios = customAxiosWithAuth()
     try {
-        const response = await axios.get(`/comments/p/${repairId}/c/${commentId}`)
+        const response = await axios.get(`/comments/r/${repairId}/c/${commentId}`)
         return response.data
     } catch(err) {
         console.log(err.message)
@@ -72,7 +72,7 @@ export async function getCommentFromRepair(commentId, repairId) {
 export async function updateCommentOfIdFromrepair(comment, commentId, repairId) {
     const axios = customAxiosWithAuth()
     try {
-        await axios.put(`/comments/p/${repairId}/c/${commentId}`, comment)
+        await axios.put(`/comments/r/${repairId}/c/${commentId}`, comment)
     } catch(err) {
         console.log(err.message)
     }

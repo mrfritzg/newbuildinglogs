@@ -45,19 +45,30 @@ function Show({ user }) {
         }
 
         const newComment = await createCommentForRepair(comment, repair._id)
+        console.log('new comment for repair: ')
+        console.log(newComment)
         let updatedrepair = { ...repair }
         updatedrepair.comments.push(newComment)
+        console.log('updated repair after new comment push: ')
+        console.log(updatedrepair)
         setRepair(updatedrepair)
         bodyRef.current.value = ''
         detailsRef.current.open = false
     }
-
+console.log(repair)
     return (
             <div>
                 <div className="a-repair">
-                    <h2>{repair.subject}</h2>
-                    <h5 style={{ opacity: '.3'}}>repaired by {repair.user} on {new Date(repair.createdAt).toLocaleDateString()} at {new Date(repair.createdAt).toLocaleTimeString()}</h5>
-                    <div className='p-body'>{repair.body}</div><br /><br />
+                <h5 style={{ opacity: '.3'}}>Added by {repair.user} on {new Date(repair.createdAt).toLocaleDateString()} at {new Date(repair.createdAt).toLocaleTimeString()}</h5>
+                <h2>Repair Ticket Details</h2>
+                    <h3>{repair.subject}</h3>
+                    <div className='p-body'>
+                        <p><strong>DESCRIPTION: </strong>{repair.description}</p>
+                        <p><strong>TYPE: </strong>{repair.type}</p>
+                        <p><strong>TICKET STATUS: </strong>{ repair.fixed ===false?<span style={{color: 'red'}}>UNRESOLVED</span>:'FIXED'}</p>
+                        <p><strong>Image: </strong></p>
+                        <p><img src={repair.image} alt={repair.image} width="500"/></p>
+                        </div><br /><br />
 
                     {
                         repair.comments?.length ?
