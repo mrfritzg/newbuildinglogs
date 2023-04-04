@@ -11,6 +11,12 @@ import NewPost from './pages/posts/New';
 import ShowPost from './pages/posts/Show';
 import EditComment from './pages/comments/Edit';
 
+import EditRepairs from './pages/repairs/Edit';
+import IndexRepairs from './pages/repairs/Index';
+import NewRepairs from './pages/repairs/New';
+import ShowRepairs from './pages/repairs/Show';
+
+
 import Register from './pages/users/Register';
 import Login from './pages/users/Login';
 
@@ -47,6 +53,8 @@ function App() {
       <Routes>
           <Route path='/posts' element={<IndexPost user={loggedIn} />} />
           <Route path='/posts/:id' element={<ShowPost user={loggedIn} />} />
+          <Route path='/repairs' element={<IndexRepairs user={loggedIn} />} />
+          <Route path='/repairs/:id' element={<ShowRepairs user={loggedIn} />} />
           {loggedIn ?
             <>
               <Route path='/posts/new' element={<NewPost user={loggedIn} />} />
