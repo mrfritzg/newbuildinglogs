@@ -34,4 +34,7 @@ router.put('/p/:pid/c/:id', authorize, confirmUserAccess, commentControl.updateC
 //for repair
 router.put('/r/:pid/c/:id', authorize, confirmUserAccess, commentControl.updateComment)
 
+//general comments update
+router.put('/c/:id', authorize, confirmUserAccess, commentControl.updateComment)
+
 module.exports = router

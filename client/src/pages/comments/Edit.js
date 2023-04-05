@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { getCommentFromPost, updateCommentOfIdFromPost } from '../../services/commentService'
+import { getCommentFromPost, updateCommentOfIdFromPost,updateCommentsfromEdit } from '../../services/commentService'
 
 function Edit() {
 
@@ -16,14 +16,17 @@ function Edit() {
     }, [params.id, params.cid])
 
     async function handleSubmit(e) {
+        console.log('handleSubmit')
         e.preventDefault()
 
         let updatedComment = {
             body: bodyRef.current.value
         }
        
-        await updateCommentOfIdFromPost(updatedComment, params.cid, params.id)
-        navigate(`/posts/${params.id}`)
+        // await updateCommentOfIdFromPost(updatedComment, params.cid, params.id)
+
+        await updateCommentsfromEdit(updatedComment, params.cid)
+        navigate(-1)//`/posts/${params.id}`)
     }
 
     return ( 

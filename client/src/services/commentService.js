@@ -30,6 +30,7 @@ export async function getCommentFromPost(commentId, postId) {
 }
 
 export async function updateCommentOfIdFromPost(comment, commentId, postId) {
+    console.log('updateCommentOfIdFromPost')
     const axios = customAxiosWithAuth()
     try {
         await axios.put(`/comments/p/${postId}/c/${commentId}`, comment)
@@ -73,6 +74,16 @@ export async function updateCommentOfIdFromrepair(comment, commentId, repairId) 
     const axios = customAxiosWithAuth()
     try {
         await axios.put(`/comments/r/${repairId}/c/${commentId}`, comment)
+    } catch(err) {
+        console.log(err.message)
+    }
+}
+
+export async function updateCommentsfromEdit(comment, commentId) {
+    // console.log('updateCommentsfromEdit')
+    const axios = customAxiosWithAuth()
+    try {
+        await axios.put(`/comments/c/${commentId}`, comment)
     } catch(err) {
         console.log(err.message)
     }

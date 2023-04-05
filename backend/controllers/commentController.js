@@ -20,6 +20,7 @@ module.exports.createComment = async (req, res) => {
     }
 }
 
+//for repair
 module.exports.createCommentforRepair = async (req, res) => {
     try {
         // create a document in our comments collection
@@ -121,6 +122,7 @@ module.exports.showComment = async (req, res) => {
 // }
 
 module.exports.updateComment = async (req, res) => {
+    // console.log('updateComment from comment controller')
     try {
         // update a comment by updating an item in the comments property in post
         await Comments.findByIdAndUpdate(req.params.id, req.body)

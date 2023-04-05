@@ -55,7 +55,7 @@ function Show({ user }) {
         bodyRef.current.value = ''
         detailsRef.current.open = false
     }
-console.log(repair)
+// console.log(repair)
     return (
             <div>
                 <div className="a-repair">
