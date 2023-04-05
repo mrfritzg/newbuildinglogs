@@ -51,15 +51,15 @@ function App() {
     <div className="App">
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
-          <Route path='/posts' element={<IndexPost user={loggedIn} />} />
-          <Route path='/posts/:id' element={<ShowPost user={loggedIn} />} />
+          {/* <Route path='/posts' element={<IndexPost user={loggedIn} />} />
+          <Route path='/posts/:id' element={<ShowPost user={loggedIn} />} /> */}
           <Route path='/repairs' element={<IndexRepairs user={loggedIn} />} />
           <Route path='/repairs/:id' element={<ShowRepairs user={loggedIn} />} />
           {loggedIn ?
             <>
-              <Route path='/posts/new' element={<NewPost user={loggedIn} />} />
+              {/* <Route path='/posts/new' element={<NewPost user={loggedIn} />} />
               <Route path='/posts/:id/edit' element={<EditPost />} />
-              <Route path='/posts/:id/comments/:cid' element={<EditComment />} />
+              <Route path='/posts/:id/comments/:cid' element={<EditComment />} /> */}
               <Route path='/repairs/new' element={<NewRepairs user={loggedIn} />} />
               <Route path='/repairs/:id/edit' element={<EditRepairs />} />
               <Route path='/repairs/:id/comments/:cid' element={<EditComment />} />

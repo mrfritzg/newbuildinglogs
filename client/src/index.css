@@ -1,12 +1,12 @@
-ul {
+/* ul {
   position: relative;
   border: 1px solid black;
   list-style: none;
   padding: 20px;
-}
-li {
+} */
+/* li {
   display: flex;
-}
+} */
 form {
   display: flex;
   flex-direction: column;
@@ -243,12 +243,6 @@ textarea {
   top: 3px;
   text-decoration: none;
 }
-
-
-
-
-
-
 
 .user-auth #icon {
     position: absolute;

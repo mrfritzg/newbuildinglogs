@@ -12,7 +12,7 @@ export function customAxios() {
 }
 
 export function customAxiosWithAuth() {
-    console.log('customAxiosWithAuth')
+    // console.log('customAxiosWithAuth')
     return axios.create({ 
         baseURL, 
         headers: {
