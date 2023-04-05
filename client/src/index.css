@@ -1,12 +1,12 @@
-/* ul {
+ ul {
   position: relative;
   border: 1px solid black;
   list-style: none;
   padding: 20px;
-} */
-/* li {
+} 
+ li {
   display: flex;
-} */
+} 
 form {
   display: flex;
   flex-direction: column;
@@ -287,7 +287,11 @@ ul.user-auth li {
     margin-bottom: 20px;
 }
 
-li.posts-nav {
+/* li.posts-nav {
   position: absolute;
   left: 0;
+} */
+
+.nav-link:hover {
+  color: red !important
 }

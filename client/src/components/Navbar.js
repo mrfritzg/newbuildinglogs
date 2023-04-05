@@ -8,10 +8,13 @@ function Navbar({ user, setUser }) {
   };
 
   return (
-   <nav className="navbar navbar-light bg-light">
-    <a href="#" className="navbar-brand mb-0 h1">
-      <img className="d-inline-block align-top" src="/buildinglogo.png" width="30" height="30"/>      
-    </a>
+   <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+    <Link to="/repairs" className="navbar-brand mb-0 h1">
+      <img className="d-inline-block align-top" src="/buildinglogo.png" width="50"/>      
+    </Link>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" className="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-lable="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
     <div className="collapse navbar-collapse" id="navbarNav">
      <ul className="user-auth navbar-nav">
       {user ? 
@@ -21,10 +24,10 @@ function Navbar({ user, setUser }) {
             <Link to="/posts">Posts</Link>
           </li> */}
           <li className="posts-nav nav-item active">
-            <Link to="/repairs">Repairs</Link>
+            <Link to="/repairs" className="nav-link active">Repairs</Link>
           </li>
           <li onClick={logout} className="nav-item active">
-            <Link to="/login">Logout</Link>
+            <Link to="/login" className="nav-link active">Logout</Link>
           </li>
         </>
        : 
@@ -33,13 +36,13 @@ function Navbar({ user, setUser }) {
             <Link to="/posts">Posts</Link>
           </li> */}
           <li className="posts-nav nav-item active">
-            <Link to="/repairs">Repairs</Link>
+            <Link to="/repairs" className="nav-link active">Repairs</Link>
           </li>
           <li className="nav-item active">
-            <Link to="/login" >Login</Link>
+            <Link to="/login" className="nav-link active">Login</Link>
           </li>
           <li className="nav-item active"> 
-            <Link to="/register">Register</Link>
+            <Link to="/register" className="nav-link active">Register</Link>
           </li>
         </>
       }
