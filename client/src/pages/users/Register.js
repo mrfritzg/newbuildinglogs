@@ -37,7 +37,8 @@ function Register({ setUser }) {
     }
 
     return ( 
-        <div className="user-auth">
+        <>
+        {/* <div className="user-auth">
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
@@ -72,7 +73,39 @@ function Register({ setUser }) {
                 <br /><br />
                 <button>Submit</button>
             </form>
-        </div>
+        </div> */}
+        <div class="container">
+  <h2>Register</h2>
+  <form class="form-horizontal" onSubmit={handleSubmit}>
+    <div class="form-group">
+      <label class="control-label col-sm-2" htmlFor="username">Username:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" onChange={handleChange}
+                    value={form.username} />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" htmlFor="email">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" onChange={handleChange}
+                    value={form.email} />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" htmlFor="password">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" onChange={handleChange}
+                    value={form.password} />
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </div>  
+  </form>
+  </div>
+        </>
      );
 }
 

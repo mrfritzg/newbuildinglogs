@@ -297,6 +297,42 @@ ul.user-auth li {
 } */
 
 .nav-link:hover {
-  color: blue !important;
-  background-color: white;
+  color: black !important;
+  background-color: skyblue;
+  font-weight: bold;
 }
+
+.control-label {
+  background-color: #212529;
+  color:white;
+  padding: 10px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container form {
+  border: 3px solid black;
+}
+
+.li-user {
+  font-weight: bold;
+  color: skyblue !important;
+}
+
+.repair-img {
+  width: 50%;
+height: auto;
+}
+
+.repairItem {
+  box-shadow: 0 3px 8px black;
+  transition: all 300ms ease-in-out;
+}
+
+.repairItem:hover {
+  box-shadow: 0 10px 40px #222;  
+}
+
+

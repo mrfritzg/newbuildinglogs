@@ -19,7 +19,7 @@ function Navbar({ user, setUser }) {
      <ul className="user-auth navbar-nav">
       {user ? 
         <>
-          <li style={{ color: "black" }} className="nav-item active">Welcome {user}!</li>
+          <li style={{ color: "black" }} className="nav-item active li-user">Hello {user}</li>
           {/* <li className="posts-nav">
             <Link to="/posts">Posts</Link>
           </li> */}

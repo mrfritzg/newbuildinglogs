@@ -37,7 +37,8 @@ function Login({ setUser }) {
     }
 
     return ( 
-        <div className='user-auth'>
+        <>
+        {/* <div className='user-auth'>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
@@ -62,7 +63,44 @@ function Login({ setUser }) {
                 <br /><br />
                 <button>Submit</button>
             </form>
+        </div> */}
+        <div class="container">
+          
+        <img className="d-inline-block align-top" src="/buildinglogo.png" width="40%"/>
+          <h1>Welcome to MrFritz Luxury Apartments Repair Request Website</h1>
+          <h2>We promise to repair to your issue within 48 hours or <span style={{color:"red"}}>we pay you 10%</span> of your rent each day until the issue is fixed!</h2>
+  <br/>
+  <h2>Login</h2>
+  <form class="form-horizontal" onSubmit={handleSubmit}>
+    <div class="form-group">
+      <label class="control-label col-sm-2" htmlFor="username">Username:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" onChange={handleChange}
+                    value={form.username} />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" htmlFor="password">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" onChange={handleChange}
+                    value={form.password} />
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember" /> Remember me</label>
         </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</>
      );
 }
 
