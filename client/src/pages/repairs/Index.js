@@ -14,7 +14,7 @@ function Index({ user }) {
         }
         loadData()
     }, [])
-
+//this function helps automatically choose the image for the issue based on the selected issue type
     function selectRepairImg(repairType) {
         let tmp
         if(repairType === 'plumbing') {
