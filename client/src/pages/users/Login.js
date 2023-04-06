@@ -66,9 +66,9 @@ function Login({ setUser }) {
         </div> */}
         <div class="container">
           
-        <img className="d-inline-block align-top" src="/buildinglogo.png" width="40%"/>
+        <img className="d-inline-block align-top" src="/buildinglogo.png" alt="logo "width="40%"/>
           <h1>Welcome to MrFritz Luxury Apartments Repair Request Website</h1>
-          <h2>We promise to repair to your issue within 48 hours or <span style={{color:"red"}}>we pay you 10%</span> of your rent each day until the issue is fixed!</h2>
+          <h2>We promise to repair to your issue within 72 hours or <span style={{color:"red"}}>we pay you 10%</span> of your rent each day until the issue is fixed!</h2>
   <br/>
   <h2>Login</h2>
   <form class="form-horizontal" onSubmit={handleSubmit}>

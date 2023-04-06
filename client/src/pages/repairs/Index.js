@@ -23,14 +23,22 @@ function Index({ user }) {
             tmp = "/images/electrical.png";
         } else if (repairType === "roof") {
             tmp = "/images/roof.png";
+        } else if (repairType === "interior") {
+            tmp = "/images/interior.png";
         } else if (repairType === "exterior") {
             tmp = "/images/exterior.png";
-        }  else if (repairType === "weartear") {
+        }  else if (repairType === "pests") {
+            tmp = "/images/pests.png";
+        } else if (repairType === "garbage") {
+            tmp = "/images/garbage.png";
+        } else if (repairType === "wear-tear") {
             tmp = "/images/weartear.png";
         } else if (repairType === "painting") {
             tmp = "/images/painting.png";
+        } else if (repairType === "leak") {
+            tmp = "/images/leak.png";
         } else {
-            tmp ="/images/plumbing.png";
+            tmp ="/images/other.png";
         }
         return tmp
     }
@@ -57,12 +65,12 @@ function Index({ user }) {
                 <div id="repairs" className="container" >
                         <div className="row g-3">
                 {repairs?.map((repairItem, index) => 
-                            <div className="col-12 col-md-1 col-lg-4 repairItem" key={index}>
+                            <div className="col-12 col-md-6 col-lg-2 repairItem" key={index}>
                                 <div className="card">
                                     <img src={selectRepairImg(repairItem.type)} alt="icon of repair" className="card-img-top repair-img"  />
                                     <div className="card-body">
                                     <Link to={`/repairs/${repairItem._id}`}>
-                                        <h5 className="card-title"><strong>TITLE: </strong>{repairItem.subject}</h5>
+                                        <h5 className="card-title"><strong>{repairItem.subject}</strong></h5>
                                         </Link>
                                         <p className="card-text">
                                         <strong>REPAIR TYPE: </strong>{ repairItem.type}

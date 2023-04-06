@@ -4,6 +4,8 @@ import { createRepairItem } from "../../services/repairServices"
 
 function New({ user }) {
 
+    const repairTypes = ['plumbing', 'electrical', 'roof','interior','exterior', 'misc', 'pests', 'garbage','wear-tear', 'painting','other...','leak']
+
     let subjectRef = useRef()
     let descripRef = useRef()
     let typeRef = useRef()
@@ -33,8 +35,14 @@ function New({ user }) {
                 <label htmlFor="subject">Subject: </label><br />
                 <input type="text" id="subj" name="subject" ref={subjectRef} required /><br /><br />
 
-                <label htmlFor="type">Type: </label><br />
-                <input type="text" id="typ" name="type" ref={typeRef} required /><br /><br />
+                <label htmlFor="type">Type: </label>
+                {/* <input type="text" id="typ" name="type" ref={typeRef} required /><br /><br /> */}
+                <select name="type" id="type" required ref={typeRef}> 
+                        {repairTypes.map((issue, index) => {
+                           return <option value={issue} key={index}>{issue}</option>
+                        }
+                        )}
+                    </select>
 
                 {/* <label htmlFor="user">User: </label><br />
                 <input type="text" id="usr" name="user" ref={userRef} required /><br /><br /> */}

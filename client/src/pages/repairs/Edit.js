@@ -4,6 +4,8 @@ import { getRepair, updateRepair } from '../../services/repairServices'
 
 function Edit() {
 
+    const repairTypes = ['plumbing', 'electrical', 'roof','interior','exterior', 'misc', 'pests', 'garbage','wear-tear', 'painting','other...','leak']
+
     const [repair, setRepair] = useState({})
 
     const navigate = useNavigate()
@@ -38,8 +40,16 @@ function Edit() {
                     <label htmlFor="nme">Subject:</label><br />
                     <input type="text" id="nme" ref={subjectRef} defaultValue={repair.subject} /><br /><br />
 
-                    <label htmlFor="type">Type: </label><br />
-                    <input type="text" id="typ" name="type" ref={typeRef} required defaultValue={repair.type}/><br /><br />
+                    <label htmlFor="type">Type: </label>
+                    {/* <input type="text" id="typ" name="type" ref={typeRef} required defaultValue={repair.type}/> */}
+                    <select name="type" id="type" required ref={typeRef} >
+                        {repairTypes.map((issue, index) => {
+                           return <option value={issue} key={index}>{issue}</option>
+                        }
+                        )}
+                    </select>
+                    
+                    <br /><br />
 
                     <label htmlFor="description">Description:</label><br />
                     <textarea ref={descripRef} id="description" cols="30" rows="10" defaultValue={repair.description} /><br /><br />
