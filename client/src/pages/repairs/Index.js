@@ -66,7 +66,7 @@ function Index({ user }) {
                         <div className="row g-3">
                 {repairs?.map((repairItem, index) => 
                             <div className="col-12 col-md-6 col-lg-2 repairItem" key={index}>
-                                <div className="card">
+                                <div className="card h-100">
                                     <img src={selectRepairImg(repairItem.type)} alt="icon of repair" className="card-img-top repair-img"  />
                                     <div className="card-body">
                                     <Link to={`/repairs/${repairItem._id}`}>
